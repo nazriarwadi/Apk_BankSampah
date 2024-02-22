@@ -56,9 +56,8 @@ class PasswordChangeSuccessPage extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => const LoginPage()),
                       );
                     },
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(double.infinity, 60),
-                      primary: Colors.green,
+                    stystyle: ElevatedButton.styleFrom(
+                      minimumSize: const Size(double.infinity, 60), backgroundColor: Colors.green,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
