@@ -11,6 +11,7 @@ import 'package:apk_jual_sampah/penjualan_screen.dart';
 import 'package:apk_jual_sampah/nasabah_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'detail_sale.dart';
+import 'screen_notifikasi.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -204,7 +205,10 @@ class _HomePageState extends State<HomePage> {
               IconButton(
                 icon: const Icon(LineIcons.bell, color: Colors.white),
                 onPressed: () {
-                  // Handle notification icon pressed
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const NotificationPage()),
+                  );
                 },
               ),
             ],
