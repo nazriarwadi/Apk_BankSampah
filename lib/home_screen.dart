@@ -32,7 +32,6 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     // Fetch sale items when the widget is initialized
     fetchSaleItems();
-    fetchSaleItems();
     // Fetch saldo when the widget is initialized
     fetchSaldo();
   }
