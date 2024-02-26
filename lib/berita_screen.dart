@@ -32,14 +32,20 @@ class _NewsPageState extends State<NewsPage> {
   }
 
   Future<List<News>> _fetchNewsData() async {
-    final response = await http
-        .get(Uri.parse('https://banksampahapi.sppapp.com/get_berita.php'));
+    try {
+      final response = await http
+          .get(Uri.parse('https://banksampahapi.sppapp.com/get_berita.php'));
 
-    if (response.statusCode == 200) {
-      List<dynamic> jsonResponse = json.decode(response.body);
-      return jsonResponse.map((data) => News.fromJson(data)).toList();
-    } else {
-      throw Exception('Failed to load news - Status code: ${response.statusCode}');
+      if (response.statusCode == 200) {
+        List<dynamic> jsonResponse = json.decode(response.body);
+        return jsonResponse.map((data) => News.fromJson(data)).toList();
+      } else {
+        print('Failed to load news - Status code: ${response.statusCode}');
+        return []; // Return an empty list or handle the error in a way suitable for your app
+      }
+    } catch (error) {
+      print('Failed to load news - Error: $error');
+      return []; // Return an empty list or handle the error in a way suitable for your app
     }
   }
 
@@ -127,7 +133,7 @@ class _NewsPageState extends State<NewsPage> {
             textStyle: const TextStyle(color: Colors.white),
           ),
         ),
-        automaticallyImplyLeading: false, 
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.green,
         iconTheme:
             const IconThemeData(color: Colors.white, size: 24.0, opacity: 2.0),
@@ -261,7 +267,8 @@ class News {
   factory News.fromJson(Map<String, dynamic> json) {
     return News(
       title: json['judul_berita'],
-      imageUrl: 'https://banksampah.sppapp.com/uploads/article/${json['image']}',
+      imageUrl:
+          'https://banksampah.sppapp.com/uploads/article/${json['image']}',
       content: json['isi_berita'],
       date: json['created'],
     );
