@@ -1,6 +1,6 @@
 # Skripsi
 
-A new Flutter project.
+Project Bank Sampah Berseri Bengakalis
 
 ## Getting Started
 
