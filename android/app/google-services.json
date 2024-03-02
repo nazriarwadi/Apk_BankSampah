@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "269738928988",
+    "project_id": "apk-jual-sampah",
+    "storage_bucket": "apk-jual-sampah.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269738928988:android:0cc1796e715597dcf2af99",
+        "android_client_info": {
+          "package_name": "app.release.apk_jual_sampah"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIT0UJioCCb_zriZL3WnOSDz5vj46ISC0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269738928988:android:cb7c98374c7258a9f2af99",
+        "android_client_info": {
+          "package_name": "app.release.bank_sampah"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIT0UJioCCb_zriZL3WnOSDz5vj46ISC0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
