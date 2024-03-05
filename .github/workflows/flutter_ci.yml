@@ -13,11 +13,14 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
+      with:
+        ref: main # You can adjust this based on your branch name
 
     - name: Setup Flutter
       uses: subosito/flutter-action@v2
       with:
-        flutter-version: '3.3.0'
+        flutter-version: '2.x.x' # Replace with the Flutter version you want
+        channel: 'stable' # Add this line to specify the Flutter channel
 
     - name: Install Dependencies
       run: flutter pub get
