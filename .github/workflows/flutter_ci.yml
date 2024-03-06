@@ -12,14 +12,12 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2
-      with:
-        ref: main
+      uses: actions/checkout@v4
 
     - name: Setup Flutter
       uses: subosito/flutter-action@v2
       with:
-        channel: 'stable'
+        flutter-version: '3.16.9'
 
     - name: Install Dependencies
       run: flutter pub get
@@ -32,12 +30,3 @@ jobs:
 
     - name: Build App Bundle
       run: flutter build appbundle
-
-    # - name: Deploy to Google Play
-    #   uses: wzieba/Fake-Google-Play-Deployment@v2
-    #   with:
-    #     artifacts: build/app/outputs/flutter-apk/app-release.apk
-    #     track: 'internal'
-    #   env:
-    #     PLAY_STORE_EMAIL: ${{ secrets.PLAY_STORE_EMAIL }}
-    #     PLAY_STORE_PASSWORD: ${{ secrets.PLAY_STORE_PASSWORD }}
